@@ -14,7 +14,7 @@ batch_size = 1
 epochs = 1
 
 
-path_to_sample_video = "util_resources/video_file_to_numpy_array_test.mp4"
+path_to_sample_video = "util_resources/test_video.mp4"
 
 video_data = pd.DataFrame({"Address + FileName": [path_to_sample_video], 
                            '0': [0], 

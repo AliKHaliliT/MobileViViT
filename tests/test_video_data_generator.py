@@ -18,9 +18,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_batch__size__wrong_type__type_error(self):
 
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         batch_size = None
@@ -33,9 +33,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_batch__size_wrong__value_value__error(self):
 
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         batch_size = -1
@@ -48,9 +48,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_shuffle_wrong__type_type__error(self):
         
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         shuffle = None
@@ -63,9 +63,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_path__col_wrong__type_type__error(self):
         
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         path_col = -1.0
@@ -78,9 +78,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_dtype_wrong__type_type__error(self):
 
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         dtype = 1
@@ -93,9 +93,9 @@ class TestVideoDataGenerator(unittest.TestCase):
     def test_output_dataframe_dataframe(self):
 
         # Arrange
-        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4", 
-                                                         "util_resources/video_file_to_numpy_array_test.mp4"], 
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
                                   '0': [0, 1, 0], 
                                   '1': [1, 0, 1]})
         

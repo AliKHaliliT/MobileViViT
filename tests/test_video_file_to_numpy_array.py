@@ -18,7 +18,7 @@ class TestVideoFileToNumpyArray(unittest.TestCase):
     def test_dtype_wrong__type_type__error(self):
 
         # Arrange
-        video_path = "util_resources/video_file_to_numpy_array_test.mp4"
+        video_path = "util_resources/test_video.mp4"
         dtype = 1
 
         # Act and Assert
@@ -29,7 +29,7 @@ class TestVideoFileToNumpyArray(unittest.TestCase):
     def test_video__read_not__opened_value__error(self):
 
         # Arrange
-        video_path = "util_resources/video_file_to_numpy_array_test.mp"
+        video_path = "util_resources/test_video.mp"
 
         # Act and Assert
         with self.assertRaises(ValueError):
@@ -39,7 +39,7 @@ class TestVideoFileToNumpyArray(unittest.TestCase):
     def test_output_video__path_numpy__array(self):
 
         # Arrange
-        video_path = "util_resources/video_file_to_numpy_array_test.mp4"
+        video_path = "util_resources/test_video.mp4"
         
         # Act
         output = videotoarray(video_path=video_path)

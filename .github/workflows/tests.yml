@@ -1,6 +1,14 @@
 name: Run Tests
 
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'MobileViViT/**'
+      - 'tests/**'
+  pull_request:
+    paths:
+      - 'MobileViViT/**'
+      - 'tests/**'
 
 jobs:
   test:

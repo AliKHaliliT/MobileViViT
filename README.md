@@ -96,8 +96,8 @@ batch_size = 1
 path_to_sample_video = "util_resources/video_file_to_numpy_array_test.mp4"
 
 video_data = pd.DataFrame({"Address + FileName": [path_to_sample_video], 
-                           "0": [0], 
-                           "1": [1]})
+                           '0': [0], 
+                           '1': [1]})
 
 data_generator = VideoDataGenerator(dataframe=video_data, batch_size=batch_size)
 

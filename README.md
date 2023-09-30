@@ -91,6 +91,7 @@ from MobileViViT import MobileViViTXXS
 
 num_output_units = 2
 batch_size = 1
+epochs = 1
 
 
 path_to_sample_video = "util_resources/video_file_to_numpy_array_test.mp4"
@@ -108,7 +109,7 @@ mobilevivit_xss.compile(optimizer="adam",
                         loss="categorical_crossentropy", 
                         metrics=["accuracy"])
 
-mobilevivit_xss.fit(data_generator, epochs=1)
+mobilevivit_xss.fit(data_generator, epochs=epochs)
 ```
 
 ## License

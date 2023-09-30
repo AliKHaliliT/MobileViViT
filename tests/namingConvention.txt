@@ -1,0 +1,10 @@
+How to read the tests: S/S/R (Subject, Scenario, Result)
+
+
+Read ->
+```
+When,
+Testing subject,
+Given some input/act/...,
+We should get some output.
+```

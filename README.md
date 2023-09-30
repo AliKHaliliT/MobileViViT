@@ -1,6 +1,6 @@
 # MobileViViT
 
-![Tests](https://img.shields.io/github/workflow/status/<AliKHaliliT>/<MobileViViT>/<tests.yml>?label=tests)
+![tests](https://github.com/AliKHaliliT/MobileViViT/actions/workflows/tests.yml/badge.svg)
 
 
 This repository contains the implementation of MobileViViT (Mobile Video Vision Transformers), which is an adaptation of [MobileViT](https://arxiv.org/abs/2110.02178) designed explicitly for higher dimensional tasks. <b> It is essential to note that this is not a research-based effort but rather an adaptation of [MobileViT](https://arxiv.org/abs/2110.02178). </b> However, utmost care has been taken to maintain the original integrity of MobileViT as much as possible.

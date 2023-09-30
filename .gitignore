@@ -3,6 +3,7 @@
 
 ### User Defined ###
 # Ignore specified files and directories
+.vscode/
 dockerRunCommand.txt
 
 ### Python ###

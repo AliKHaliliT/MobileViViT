@@ -16,6 +16,7 @@ class VideoDataGenerator(tf.keras.utils.Sequence):
 
     def __init__(self, dataframe: pd.DataFrame, batch_size: int, 
                  shuffle: bool = True, 
+                 normalization_value: Optional[Union[int, float]] = None,
                  path_col: Optional[Union[str, int]] = None,
                  dtype: np.dtype = np.float32) -> None:
 
@@ -37,6 +38,12 @@ class VideoDataGenerator(tf.keras.utils.Sequence):
         
         shuffle : bool, optional
             Whether to shuffle the indices after each epoch. The default is True.
+
+        normalization_value : int or float, optional
+            Value to normalize the video frames. The default value is None.
+            After the normalization, the video frames will be in the range [0, 1].
+            The final dtype of the normalization value as well as the video frames 
+            will be the same as the dtype parameter.
 
         path_col : str or int, optional
             Name or index of the column containing the video file paths. 
@@ -60,6 +67,9 @@ class VideoDataGenerator(tf.keras.utils.Sequence):
             raise ValueError("batch_size must be positive")
         if not isinstance(shuffle, bool):
             raise TypeError("shuffle must be a boolean")
+        if normalization_value is not None:
+            if not isinstance(normalization_value, int) and not isinstance(normalization_value, float):
+                raise TypeError("normalization_value must be an integer or a float")
         if path_col is not None:
             if not isinstance(path_col, str) and not isinstance(path_col, int):
                 raise TypeError("path_col must be a string or an integer")
@@ -73,6 +83,7 @@ class VideoDataGenerator(tf.keras.utils.Sequence):
         self.batch_size = batch_size
         self.indexes = np.arange(len(dataframe))
         self.shuffle = shuffle
+        self.normalization_value = normalization_value
         self.path_col = path_col
         self.dtype = dtype
 
@@ -142,7 +153,14 @@ class VideoDataGenerator(tf.keras.utils.Sequence):
         for i in batch_indices:
 
             video_path = self.dataframe.iloc[i, 0] 
-            video_frames = videotoarray(video_path, self.dtype)
+
+            if self.normalization_value is not None:
+                if np.issubdtype(self.dtype, np.integer):
+                    video_frames = videotoarray(video_path, self.dtype) // self.dtype(self.normalization_value)
+                elif np.issubdtype(self.dtype, np.floating):
+                    video_frames = videotoarray(video_path, self.dtype) / self.dtype(self.normalization_value)
+            else:
+                video_frames = videotoarray(video_path, self.dtype)
             
             labels = self.dataframe.iloc[i, 1:].astype(self.dtype)
 

@@ -20,7 +20,7 @@ video_data = pd.DataFrame({"Address + FileName": [path_to_sample_video],
                            '0': [0], 
                            '1': [1]})
 
-data_generator = VideoDataGenerator(dataframe=video_data, batch_size=batch_size)
+data_generator = VideoDataGenerator(dataframe=video_data, batch_size=batch_size, normalization_value=255)
 
 
 mobilevivit_xss = MobileViViTXXS(num_output_units=num_output_units)

@@ -60,6 +60,21 @@ class TestVideoDataGenerator(unittest.TestCase):
             VideoDataGenerator(dataframe=dataframe, batch_size=1, shuffle=shuffle)
 
 
+    def test_normalization__value_wrong__type_type__error(self):
+        
+        # Arrange
+        dataframe = pd.DataFrame({"Address + FileName": ["util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4", 
+                                                         "util_resources/test_video.mp4"], 
+                                  '0': [0, 1, 0], 
+                                  '1': [1, 0, 1]})
+        normalization_value = "test"
+
+        # Act and Assert
+        with self.assertRaises(TypeError):
+            VideoDataGenerator(dataframe=dataframe, batch_size=1, normalization_value=normalization_value)
+
+
     def test_path__col_wrong__type_type__error(self):
         
         # Arrange

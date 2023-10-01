@@ -77,6 +77,7 @@ Please be aware that the listed dependencies may not cover all requirements and 
      ┃  ┣ 📜 squeeze_and_excitation.py
      ┃  ┣ 📜 video_data_generator.py
      ┃  ┗ 📜 video_file_to_numpy_array.py
+     ┃  ┗ 📜 video_frame_unifier.py
  ┣ 📜 mobilevivit_s.py
  ┣ 📜 mobilevivit_xs.py
  ┗ 📜 mobilevivit_xxs.py

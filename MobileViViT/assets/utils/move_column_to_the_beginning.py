@@ -1,4 +1,6 @@
 import pandas as pd
+from move_column_to_the_beginning_assets._by_name import _by_name
+from move_column_to_the_beginning_assets._by_index import _by_index
 
 
 class MoveColumnToTheBeginning:
@@ -8,6 +10,27 @@ class MoveColumnToTheBeginning:
     A class containing functions to move a column to the beginning of a Pandas DataFrame.
 
     """
+
+    def __init__(self) -> None:
+
+        """
+
+        Constructor of the MoveColumnToTheBeginning class.
+
+        
+        Parameters
+        ----------
+        None.
+
+        
+        Returns
+        -------
+        None.
+
+        """
+
+        pass
+
         
     @staticmethod
     def move_column_to_the_beginning_by_name(dataframe: pd.DataFrame, column_name: str) -> pd.DataFrame:
@@ -42,26 +65,7 @@ class MoveColumnToTheBeginning:
             raise ValueError("column_name must be a column of the DataFrame")
         
 
-        if column_name == dataframe.columns[0]:
-
-            print("The column is already in the beginning, returning the original DataFrame.")
-
-
-            return dataframe
-        
-        else:
-                
-            # Get the column
-            column = dataframe[column_name]
-
-            # Remove the column from its current position
-            dataframe = dataframe.drop(columns=column_name)
-
-            # Add the column to the beginning
-            dataframe.insert(0, column_name, column)
-
-
-            return dataframe
+        return _by_name(dataframe, column_name)
 
 
     @staticmethod
@@ -97,23 +101,4 @@ class MoveColumnToTheBeginning:
             raise ValueError("column_index is out of range for DataFrame")
 
 
-        if column_index == 0:
-
-            print("The column is already in the beginning, returning the original DataFrame.")
-
-
-            return dataframe
-        
-        else:
-
-            # Get the column
-            column = dataframe.iloc[:, column_index]
-
-            # Remove the column from its current position
-            dataframe = dataframe.drop(dataframe.columns[column_index], axis=1)
-
-            # Add the column to the beginning
-            dataframe.insert(0, dataframe.columns[column_index], column)
-
-
-            return dataframe
+        return _by_index(dataframe, column_index)

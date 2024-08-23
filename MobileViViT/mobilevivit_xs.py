@@ -37,7 +37,8 @@ class MobileViViTXS(tf.keras.Model):
         
         Parameters
         ----------
-        None.
+        num_output_units : int
+            Number of output units.
         
         
         Returns

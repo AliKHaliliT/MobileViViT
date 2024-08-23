@@ -112,9 +112,7 @@ def low_resource_training_scheme(model: tf.keras.Model,
         # Initializing the total gradients to zero which will reset at the end of each epoch
         total_gradients = [tf.zeros_like(var) for var in model.trainable_variables]
 
-        if verbose == 0:
-            pass
-        elif verbose == 1 or verbose == 2:
+        if verbose == 1 or verbose == 2:
             print(f"Epoch {epoch + 1}:")
 
         # Iterating over the training dataset

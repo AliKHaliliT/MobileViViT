@@ -5,6 +5,7 @@
 # Ignore specified files and directories
 .vscode/
 dockerRunCommand.txt
+local_test.py
 
 ### Python ###
 # Byte-compiled / optimized / DLL files

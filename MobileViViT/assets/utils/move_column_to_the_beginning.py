@@ -1,6 +1,6 @@
 import pandas as pd
-from move_column_to_the_beginning_assets._by_name import _by_name
-from move_column_to_the_beginning_assets._by_index import _by_index
+from .move_column_to_the_beginning_assets._by_name import _by_name
+from .move_column_to_the_beginning_assets._by_index import _by_index
 
 
 class MoveColumnToTheBeginning:

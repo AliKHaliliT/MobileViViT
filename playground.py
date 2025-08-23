@@ -9,24 +9,26 @@ from MobileViViT.assets.utils.video_data_generator import VideoDataGenerator
 from MobileViViT import MobileViViTXXS
 
 
+# Config
 num_output_units = 2
 batch_size = 1
 epochs = 1
 
 
-path_to_sample_video = "util_resources/test_video.mp4"
+# Sample input video
+path_to_video = "util_resources/test_video.mp4"
+video_data = pd.DataFrame({
+    "Address + FileName": [path_to_video],
+    "0": [0],
+    "1": [1]
+})
 
-video_data = pd.DataFrame({"Address + FileName": [path_to_sample_video], 
-                           '0': [0], 
-                           '1': [1]})
 
+# Data generator
 data_generator = VideoDataGenerator(dataframe=video_data, batch_size=batch_size)
 
 
-mobilevivit_xss = MobileViViTXXS(num_output_units=num_output_units)
-
-mobilevivit_xss.compile(optimizer="adam", 
-                        loss="categorical_crossentropy", 
-                        metrics=["accuracy"])
-
-mobilevivit_xss.fit(data_generator, epochs=epochs)
+# Initialize and train model
+model = MobileViViTXXS(num_output_units=num_output_units)
+model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
+model.fit(data_generator, epochs=epochs)
